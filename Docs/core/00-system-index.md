@@ -23,6 +23,7 @@ graph TD
 - [Components](../components/components-index.md)
 - [Database](../database/database-index.md)
 - [Logic](../logic/logic-index.md)
+- [Plans](../plans/template-plan.md)
 
 ## 🧠 Core Brain Documents
 

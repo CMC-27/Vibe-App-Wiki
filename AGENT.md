@@ -47,7 +47,8 @@ This is the master directory containing the Architecture Flow and system index. 
 2. **Follow Design Specs:** Adhere strictly to the color palettes, fonts, and UI behaviors detailed in the Design System.
 3. **Destructive Actions:** Require confirmation modals/prompts for any user actions that delete or destroy data.
 4. **Context Review:** Before writing any code, review the last 3 entries in `Docs/logs/agent-changelog.md` to establish current project state.
-5. **Mandatory Wrap-Up Protocol:** Whenever a task or feature is complete — including when the user says anything like "wrap up", "we're done", "ship it", "that's it", or closes out a conversation — you **MUST** perform the following steps:
+5. **Planning & Execution:** For multi-step tasks, create/update a plan file under `Docs/plans/` using the [Template Plan](Docs/plans/template-plan.md).
+6. **Mandatory Wrap-Up Protocol:** Whenever a task or feature is complete — including when the user says anything like "wrap up", "we're done", "ship it", "that's it", or closes out a conversation — you **MUST** perform the following steps:
 
    **Part 1 - Audit Logging:** Document your actions by adding a row to `Docs/logs/agent-changelog.md` using the exact format below:
    ```markdown
