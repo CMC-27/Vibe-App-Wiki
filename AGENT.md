@@ -1,4 +1,4 @@
-# Application Wiki: Agent Entry Point 🚀
+# Vibe App Wiki: Agent Entry Point 🚀
 
 **Welcome to the Application Workspace.** 
 This repository is configured with a structured documentation library (under `/Docs`) designed to serve as the single source of truth for the codebase, architecture, state management, and user interfaces.

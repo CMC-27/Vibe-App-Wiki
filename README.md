@@ -1,6 +1,6 @@
-# Application Wiki Template 🚀
+# Vibe App Wiki 🚀
 
-Welcome to the **Application Wiki** template repository. This workspace serves as a standardized, app-agnostic scaffold designed to facilitate seamless agentic development, structured planning, and comprehensive documentation management for any codebase.
+Welcome to the **Vibe App Wiki** repository. This workspace serves as a standardized, app-agnostic scaffold designed to facilitate seamless agentic development, structured planning, and comprehensive documentation management for any codebase.
 
 ---
 
