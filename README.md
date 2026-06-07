@@ -1,0 +1,27 @@
+# Application Wiki Template 🚀
+
+Welcome to the **Application Wiki** template repository. This workspace serves as a standardized, app-agnostic scaffold designed to facilitate seamless agentic development, structured planning, and comprehensive documentation management for any codebase.
+
+---
+
+## 📂 Repository Structure
+
+Below is an overview of the core entry points and directories in this workspace:
+
+*   **[`AGENT.md`](AGENT.md)**: The mandatory landing page and instructions for AI agents. It maps tasks to documentation files, defines development rules, and outlines the mandatory wrap-up protocol.
+*   **[`HOW-TO.md`](HOW-TO.md)**: A guide detailing the agentic development lifecycle, covering setup/bootstrapping, planning methodologies (such as stateless *Pass the Parcel* or multi-stage pipelines), and pre-deployment validation.
+*   **[`DESIGN.md`](DESIGN.md)**: Standard frontend design rules and CSS token references to ensure consistent, premium UI development.
+*   **`/Docs`**: The structured intelligence hub of the project, split into thematic subdirectories:
+    *   `core/`: Core architecture, vision, design systems, and state context.
+    *   `features/`: Feature-specific logic, layouts, and components.
+    *   `components/`: Catalog of design system component specifications.
+    *   `database/` & `logic/`: Schema definitions and core utility standards.
+    *   `logs/`: Development history records, including the [`agent-changelog.md`](Docs/logs/agent-changelog.md).
+
+---
+
+## 🛠️ How to Use This Template
+
+1.  **Configure the Vision**: Run the `create-app-vision-north-star` skill (or edit [`Docs/core/01-vision-north-star.md`](Docs/core/01-vision-north-star.md)) to define your new application's core goals.
+2.  **Define the Structure**: Build out the schemas, routes, and features in the `/Docs` directory to establish a clear architectural layout before writing code.
+3.  **Coordinate with AI Agents**: Direct incoming agents to read [`AGENT.md`](AGENT.md) first to ensure they adhere to the project's styling tokens, code hygiene rules, and validation pipelines.
