@@ -2,6 +2,28 @@
 
 All changes made by AI agents are tracked chronologically below.
 
+## [2026-06-19 10:04] - Updated Documentation Skills for Wiki/DevOps Split
+**Agent:** Antigravity (Claude Sonnet 4.6)
+**Files Modified:**
+- `Skills/documentation-architecture-assessment/SKILL.md`
+- `Skills/documentation-architecture-bootstrap/SKILL.md`
+- `Skills/documentation-architecture-bootstrap/references/17-docs-blueprint.md`
+- `Skills/documentation-architecture-bootstrap/references/00-system-index.md`
+**Database/API Changes:** None
+**Summary:** Updated both documentation skills to teach and enforce the Wiki/DevOps two-library split. Assessment skill now directs agents to Wiki/core and DevOps/logs correctly. Bootstrap skill rewrote folder taxonomy, naming conventions, hub-spoke strategy, bootstrapping checklist, and reference templates to produce the new standard structure on any new project bootstrap.
+
+## [2026-06-19 09:57] - Split Docs Library into Wiki and DevOps
+**Agent:** Antigravity (Claude Sonnet 4.6)
+**Files Modified:**
+- `Wiki/core/00-system-index.md`
+- `Wiki/core/04-directory-structure.md`
+- `Wiki/core/17-docs-blueprint.md`
+- `AGENT.md`
+- `README.md`
+- `DESIGN.md`
+**Database/API Changes:** None
+**Summary:** Migrated `Docs/` into two purpose-driven top-level directories: `Wiki/` (architecture knowledge: core, features, components, database, logic) and `DevOps/` (operational tooling: backlog, plans, archive-plans, logs). Updated all cross-reference paths across AGENT.md, README.md, DESIGN.md, and internal Wiki docs.
+
 ## [2026-06-19 00:49] - Added Version History Template and Fixed Hardcoded Skill Paths
 **Agent:** Antigravity (Gemini 3.5 Flash (Medium))
 **Files Modified:**

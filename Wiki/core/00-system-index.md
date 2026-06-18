@@ -2,7 +2,7 @@
 type: "core"
 name: "System Index"
 status: "stable"
-description: "Master entry point for the entire documentation library."
+description: "Master entry point for the Wiki (architecture) and DevOps (operational) libraries."
 ---
 
 # 🗺️ System Index
@@ -19,15 +19,18 @@ graph TD
 
 ## 📂 Category Indexes
 
+### 📖 Wiki (Architecture)
 - [Features](../features/features-index.md)
 - [Components](../components/components-index.md)
 - [Database](../database/database-index.md)
 - [Logic](../logic/logic-index.md)
-- [Plans](../plans/template-plan.md)
-- [Backlog](../backlog/backlog-index.md)
-- [Archive](../archive-plans/README.md)
-- [Version History](../logs/version-history.md)
-- [Agent Changelog](../logs/agent-changelog.md)
+
+### ⚙️ DevOps (Operational)
+- [Plans](../../DevOps/plans/template-plan.md)
+- [Backlog](../../DevOps/backlog/backlog-index.md)
+- [Archive](../../DevOps/archive-plans/README.md)
+- [Version History](../../DevOps/logs/version-history.md)
+- [Agent Changelog](../../DevOps/logs/agent-changelog.md)
 
 ## 🧠 Core Brain Documents
 

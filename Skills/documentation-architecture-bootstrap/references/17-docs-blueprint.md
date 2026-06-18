@@ -21,18 +21,27 @@ The documentation is not just for humans; it is the **source of truth** for AI A
 
 ## 2. Folder Taxonomy (The Library Structure)
 
-The library is organized into specialized directories based on their functional role:
+The library is organized into **two top-level libraries** based on functional purpose:
+
+### 📖 Wiki/ — Architecture Knowledge Base
 
 | Directory | Role | Parent/Index File | Description |
 | :--- | :--- | :--- | :--- |
-| `/docs/core` | **The Brain** | `00-system-index.md` | Master index, design systems, state context, and global architecture. |
-| `/docs/features` | **The Nervous System** | `features-index.md` | Screen-specific documentation, feature workflows, and view-logic. |
-| `/docs/components` | **The Muscle** | `components-index.md` | Documentation for reusable UI atoms, molecules, and organisms. |
-| `/docs/database` | **The Skeleton** | `database-index.md` | Schema breakdowns, table relationships, and data-layer logic. |
-| `/docs/logic` | **The Internal Organs**| `logic-index.md` | Utility functions, custom hooks, and complex algorithmic explanations. |
-| `/docs/logs` | **The Memory** | `agent-changelog.md` | Chronological records of agent actions, audits, and hygiene checks. |
-| `/docs/plans` | **The Vision** | `plans-index.md` | Implementation plans, architectural RFCs, and feature roadmaps. |
-| `/docs/prompts` | **The Voice** | `prompts-index.md` | Standardized LLM prompts and persona definitions for consistency. |
+| `Wiki/core` | **The Brain** | `00-system-index.md` | Master index, design systems, state context, and global architecture. |
+| `Wiki/features` | **The Nervous System** | `features-index.md` | Screen-specific documentation, feature workflows, and view-logic. |
+| `Wiki/components` | **The Muscle** | `components-index.md` | Documentation for reusable UI atoms, molecules, and organisms. |
+| `Wiki/database` | **The Skeleton** | `database-index.md` | Schema breakdowns, table relationships, and data-layer logic. |
+| `Wiki/logic` | **The Internal Organs**| `logic-index.md` | Utility functions, custom hooks, and complex algorithmic explanations. |
+
+### ⚙️ DevOps/ — Operational Process Tooling
+
+| Directory | Role | Parent/Index File | Description |
+| :--- | :--- | :--- | :--- |
+| `DevOps/logs` | **The Memory** | `agent-changelog.md` | Chronological records of agent actions, audits, and hygiene checks. |
+| `DevOps/backlog` | **The Queue** | `backlog-index.md` | Project backlog index and individual backlog plan files. |
+| `DevOps/plans` | **The Vision** | *(User Managed)* | Implementation plans, architectural RFCs, and feature roadmaps. |
+| `DevOps/archive-plans` | **The Archive** | `README.md` | Completed and closed implementation plans. |
+| `DevOps/prompts` | **The Voice** | *(User Managed)* | Standardized LLM prompts and persona definitions for consistency. |
 
 ---
 
@@ -45,7 +54,8 @@ To ensure high-speed lookup and clarity, files within subdirectories must follow
 - **Components:** `ui-component-name.md` (e.g., `ui-modal.md`).
 - **Database:** `db-table-name.md` (e.g., `db-projects.md`).
 - **Logic:** `util-logic-name.md` or `hook-name.md`.
-- **Plans:** `plan-feature-name.md`.
+- **Plans:** `DevOps/plans/name-plan.md`.
+- **Backlog:** `DevOps/backlog/<feature-slug>-backlog.md`.
 
 ---
 
@@ -80,18 +90,19 @@ Links to related database tables, parent indices, or sibling features.
 
 ## 5. The "Hub & Spoke" Linking Strategy
 
-- **The Hub:** `docs/core/00-system-index.md` acts as the master router. It should link to all **Category Indices**.
-- **The Spokes:** Each category (Features, Database, Logic) has its own `*-index.md` that lists its children.
-- **Cross-Links:** Individual docs should link directly to their database schemas or utility dependencies.
+- **The Hub:** `Wiki/core/00-system-index.md` acts as the master router. It links to all **Category Indices** in the Wiki, and also cross-links to DevOps operational directories.
+- **The Spokes:** Each Wiki category (`Wiki/features/`, `Wiki/database/`, `Wiki/logic/`, `Wiki/components/`) has its own `*-index.md` that lists its children.
+- **DevOps Cross-Links:** The hub also links out to `DevOps/backlog/`, `DevOps/plans/`, `DevOps/logs/`, and `DevOps/archive-plans/`.
+- **Cross-Links:** Individual docs link directly to their database schemas or utility dependencies.
 
 ---
 
 ## 6. The Lifecycle of Documentation
 
-1. **Planning:** A `plan-*.md` is created in `/docs/plans`.
-2. **Execution:** The agent performs the work and logs it in `docs/logs/agent-changelog.md`.
-3. **Sync:** As code is committed, the corresponding `feat-*`, `ui-*`, or `db-*` docs are updated to reflect the new truth.
-4. **Archiving:** Deprecated features move to a `deprecated/` subfolder or are marked in frontmatter.
+1. **Planning:** A plan file is created in `DevOps/plans/`.
+2. **Execution:** The agent performs the work and logs it in `DevOps/logs/agent-changelog.md`.
+3. **Sync:** As code is committed, the corresponding `feat-*`, `ui-*`, or `db-*` docs in `Wiki/` are updated to reflect the new truth.
+4. **Archiving:** Deprecated features move to a `deprecated/` subfolder or are marked in frontmatter. Completed plans move from `DevOps/plans/` to `DevOps/archive-plans/`.
 
 ---
 
@@ -99,7 +110,7 @@ Links to related database tables, parent indices, or sibling features.
 
 Use this checklist to establish the core knowledge infrastructure. All 19 slots are defined below in their canonical numbered order.
 
-### 🧠 Core Brain Documents (`/docs/core`)
+### 🧠 Wiki Core Brain Documents (`Wiki/core/`)
 
 | Slot | Filename | Name | Status |
 |:---|:---|:---|:---|

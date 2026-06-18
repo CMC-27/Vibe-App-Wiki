@@ -12,7 +12,7 @@ references: "references/ — Contains 19 pre-built agnostic Markdown templates (
 This skill defines the **Documentation Library Standard**. It is designed to turn a codebase from a "black box" into a transparent, agent-ready intelligence hub — regardless of tech stack, domain, or team size.
 
 > [!IMPORTANT]
-> This blueprint is **application-agnostic**. It defines the *pattern*, not the content. Every project that adopts this standard will produce a `/docs` library with the same shape, making cross-project navigation instant for both humans and AI agents.
+> This blueprint is **application-agnostic**. It defines the *pattern*, not the content. Every project that adopts this standard produces two top-level libraries — `Wiki/` (architecture knowledge) and `DevOps/` (operational tooling) — giving both humans and AI agents an instantly predictable navigation structure across any project.
 
 ---
 
@@ -31,19 +31,27 @@ The documentation is not just for humans; it is the **source of truth** for AI A
 
 ## 2. Folder Taxonomy (The Library Structure)
 
-Every project's `/docs` directory is organized into specialized subdirectories based on functional role. Each uses a consistent metaphor to aid recall:
+Every project is organized into **two top-level libraries** and their specialized subdirectories, each with a consistent metaphor to aid recall:
+
+### 📖 Wiki/ — Architecture Knowledge Base
 
 | Directory | Role | Parent/Index File | Description |
 | :--- | :--- | :--- | :--- |
-| `/docs/core` | **The Brain** | `00-system-index.md` | Master index, design system, state context, architecture, and all foundational documents. |
-| `/docs/features` | **The Nervous System** | `features-index.md` | Screen-specific documentation, feature workflows, and view-level logic. |
-| `/docs/components` | **The Muscle** | `components-index.md` | Documentation for reusable UI elements — atoms, molecules, and organisms. |
-| `/docs/database` | **The Skeleton** | `database-index.md` | Schema breakdowns, table/collection relationships, and data-layer logic. |
-| `/docs/logic` | **The Internal Organs** | `logic-index.md` | Utility functions, custom hooks, services, parsers, and complex algorithmic explanations. |
-| `/docs/logs` | **The Memory** | `agent-changelog.md` | Chronological records of agent actions and audits. |
-| `/docs/backlog` | **The Queue** | `backlog-index.md` | Project backlog index and individual early-prepared backlog plans (`<feature-slug>-backlog.md`). |
-| `/docs/prompts` | **The Voice** | *(User Managed)* | Standardized LLM prompts and persona definitions. |
-| `/docs/plans` | **The Future** | *(User Managed)* | Historical and active implementation plans. |
+| `Wiki/core` | **The Brain** | `00-system-index.md` | Master index, design system, state context, architecture, and all foundational documents. |
+| `Wiki/features` | **The Nervous System** | `features-index.md` | Screen-specific documentation, feature workflows, and view-level logic. |
+| `Wiki/components` | **The Muscle** | `components-index.md` | Documentation for reusable UI elements — atoms, molecules, and organisms. |
+| `Wiki/database` | **The Skeleton** | `database-index.md` | Schema breakdowns, table/collection relationships, and data-layer logic. |
+| `Wiki/logic` | **The Internal Organs** | `logic-index.md` | Utility functions, custom hooks, services, parsers, and complex algorithmic explanations. |
+
+### ⚙️ DevOps/ — Operational Process Tooling
+
+| Directory | Role | Parent/Index File | Description |
+| :--- | :--- | :--- | :--- |
+| `DevOps/logs` | **The Memory** | `agent-changelog.md` | Chronological records of agent actions and audits. |
+| `DevOps/backlog` | **The Queue** | `backlog-index.md` | Project backlog index and individual early-prepared backlog plans (`<feature-slug>-backlog.md`). |
+| `DevOps/plans` | **The Future** | *(User Managed)* | Historical and active implementation plans. |
+| `DevOps/archive-plans` | **The Archive** | `README.md` | Completed and closed implementation plans. |
+| `DevOps/prompts` | **The Voice** | *(User Managed)* | Standardized LLM prompts and persona definitions. |
 
 ---
 
@@ -53,13 +61,15 @@ To ensure high-speed lookup and clarity, files within subdirectories **must** fo
 
 | Directory | Prefix Pattern | Examples |
 | :--- | :--- | :--- |
-| `core/` | `0x-name.md` (numbered sequence) | `00-system-index.md`, `01-vision-north-star.md` |
-| `features/` | `feat-feature-name.md` | `feat-dashboard.md`, `feat-user-auth.md` |
-| `components/` | `ui-component-name.md` | `ui-modal-base.md`, `ui-data-table.md` |
-| `database/` | `db-collection-name.md` | `db-users.md`, `db-projects.md` |
-| `logic/` | `util-name.md` or `hook-name.md` | `util-date-parser.md`, `hook-use-auth.md` |
-| `logs/` | `agent-changelog.md` | *(single file, append-only)* |
-| `backlog/` | `backlog-index.md` or `<feature-slug>-backlog.md` | `backlog-index.md`, `supabase-rls-backlog.md` |
+| `Wiki/core/` | `0x-name.md` (numbered sequence) | `00-system-index.md`, `01-vision-north-star.md` |
+| `Wiki/features/` | `feat-feature-name.md` | `feat-dashboard.md`, `feat-user-auth.md` |
+| `Wiki/components/` | `ui-component-name.md` | `ui-modal-base.md`, `ui-data-table.md` |
+| `Wiki/database/` | `db-collection-name.md` | `db-users.md`, `db-projects.md` |
+| `Wiki/logic/` | `util-name.md` or `hook-name.md` | `util-date-parser.md`, `hook-use-auth.md` |
+| `DevOps/logs/` | `agent-changelog.md` | *(single file, append-only)* |
+| `DevOps/backlog/` | `backlog-index.md` or `<feature-slug>-backlog.md` | `backlog-index.md`, `supabase-rls-backlog.md` |
+| `DevOps/plans/` | `name-plan.md` | `feat-dashboard-plan.md` |
+| `DevOps/archive-plans/` | `name-plan.md` | *(moved from DevOps/plans/ when complete)* |
 
 > [!TIP]
 > The numbered `0x-` prefix in `/core` creates a natural **onboarding flow**. New team members (or agents) read documents in sequence to build context progressively.
@@ -115,8 +125,9 @@ graph TD
     F2 -.->|"cross-link"| D1
 ```
 
-- **The Hub:** `docs/core/00-system-index.md` acts as the master router. It links to all **Category Index** files.
-- **The Spokes:** Each category (`features/`, `database/`, `logic/`, `components/`) has its own `*-index.md` listing its children.
+- **The Hub:** `Wiki/core/00-system-index.md` acts as the master router. It links to all **Category Index** files in both libraries.
+- **The Spokes:** Each category (`Wiki/features/`, `Wiki/database/`, `Wiki/logic/`, `Wiki/components/`) has its own `*-index.md` listing its children.
+- **DevOps Cross-Links:** `Wiki/core/00-system-index.md` also links out to `DevOps/backlog/`, `DevOps/plans/`, `DevOps/logs/`, and `DevOps/archive-plans/`.
 - **Cross-Links:** Individual documents link directly to their related schemas, utilities, or dependencies using relative paths.
 
 ---
@@ -125,7 +136,7 @@ graph TD
 
 Use this checklist to establish the core knowledge infrastructure. Every document listed below is a canonical slot in a production-ready, agent-navigable repository.
 
-### 🧠 Core Brain Documents (`/docs/core`)
+### 🧠 Wiki Core Brain Documents (`Wiki/core/`)
 
 All 19 slots are defined below in their canonical numbered order.
 
@@ -303,15 +314,15 @@ Each subfolder index serves as a **table of contents** for its category. It grou
 - **✅ Must Do:** Summarize the responsibility of each utility/hook (input → output).
 - **❌ Don't:** Copy-paste function source code; explain the contract.
 
-#### `logs/agent-changelog.md`
-- **✅ Must Do:** Follow the strict format defined in the project's agent entry point (`GEMINI.md` or equivalent).
+#### `DevOps/logs/agent-changelog.md`
+- **✅ Must Do:** Follow the strict format defined in the project's agent entry point (`AGENT.md` or equivalent).
 - **❌ Don't:** Write long paragraphs; use concise bullet points with timestamps.
 
-#### `logs/version-history.md`
+#### `DevOps/logs/version-history.md`
 - **✅ Must Do:** Document all major, minor, and patch version increments with dates, deployer names, and core highlights following the 3-Level Versioning Strategy.
 - **❌ Don't:** Include minor developer detail in release highlights; keep them high-level and readable for stakeholders.
 
-#### `backlog/backlog-index.md`
+#### `DevOps/backlog/backlog-index.md`
 - **✅ Must Do:** Keep a high-level list of all parked, deferred, and future roadmap items, with direct links to their detailed `<feature-slug>-backlog.md` plan files.
 - **❌ Don't:** Place detailed technical plans or specifications directly in the index; keep them isolated in separate backlog plan files.
 
@@ -321,8 +332,9 @@ Each subfolder index serves as a **table of contents** for its category. It grou
 
 The following directories are **User Managed**. Agents should **never** create or update index files for these folders unless explicitly asked:
 
-- **`/docs/plans`** — Active and historical implementation plans.
-- **`/docs/prompts`** — Standardized LLM prompts and persona definitions.
+- **`DevOps/plans/`** — Active and historical implementation plans.
+- **`DevOps/archive-plans/`** — Completed and closed plans (moved from `DevOps/plans/` on completion).
+- **`DevOps/prompts/`** — Standardized LLM prompts and persona definitions.
 
 ---
 
@@ -333,14 +345,14 @@ When applying this blueprint to a **new** project for the first time:
 > [!TIP]
 > **Don't start from scratch.** This skill includes a `references/` directory containing **19 pre-built, application-agnostic Markdown templates** — one for every canonical `/docs/core` slot (`00` through `18`). Always use these as your starting scaffold. They contain the correct frontmatter, section headings, structural patterns, and inline `[PLACEHOLDER]` prompts that guide you through filling in project-specific content.
 
-1. **Read the templates first:** Run `list_dir` on this skill's `references/` directory to see all available scaffolds. Copy the relevant template into the target project's `/docs/core/` directory before writing any content.
-2. **Create the folder structure** per Section 2.
-3. **Seed `00-system-index.md`** with the project name, a placeholder architecture diagram, links to empty category indices, and the **summary table listing all core docs (`01` to `18`)**.
-4. **Create empty category indices** (`features-index.md`, `components-index.md`, `database-index.md`, `logic-index.md`).
+1. **Read the templates first:** Run `list_dir` on this skill's `references/` directory to see all available scaffolds. Copy the relevant template into the target project's `Wiki/core/` directory before writing any content.
+2. **Create the folder structure** per Section 2 — both `Wiki/` and `DevOps/` top-level directories.
+3. **Seed `Wiki/core/00-system-index.md`** with the project name, a placeholder architecture diagram, links to empty category indices (Wiki spokes) and DevOps operational links, and the **summary table listing all core docs (`01` to `18`)**.
+4. **Create empty category indices** (`Wiki/features/features-index.md`, `Wiki/components/components-index.md`, `Wiki/database/database-index.md`, `Wiki/logic/logic-index.md`, `DevOps/backlog/backlog-index.md`).
 5. **Run a Gap Analysis** against the Foundation Checklist (Section 6) and prioritize:
-   - `01-vision-north-star.md` (establishes the product's goal and magic moment)
-   - `04-directory-structure.md` (prevents file sprawl and maps code locations)
-   - `06-design-system.md` (prevents UI inconsistency and sets visual standards)
+   - `Wiki/core/01-vision-north-star.md` (establishes the product's goal and magic moment)
+   - `Wiki/core/04-directory-structure.md` (prevents file sprawl and maps code locations)
+   - `Wiki/core/06-design-system.md` (prevents UI inconsistency and sets visual standards)
 6. **Fill remaining docs** incrementally as features are built.
 
 ---
