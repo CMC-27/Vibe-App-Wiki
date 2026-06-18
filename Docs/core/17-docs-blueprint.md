@@ -19,6 +19,8 @@ This project implements the **Documentation Library Standard**.
 - `Docs/logic/` (Internal Organs: utilities, helpers, custom hooks)
 - `Docs/plans/` (Strategy: multi-agent execution plans, templates)
 - `Docs/logs/` (Memory: agent log records & version history)
+- `Docs/backlog/` (Queue: project backlog index and individual backlog plans)
+- `Docs/archive-plans/` (Archive: completed implementation plans)
 
 ## 📌 Standard File Naming
 
@@ -29,3 +31,5 @@ This project implements the **Documentation Library Standard**.
 - **Logic:** `Docs/logic/util-name.md` or `hook-name.md`
 - **Plans:** `Docs/plans/name-plan.md`
 - **Logs:** `Docs/logs/agent-changelog.md`
+- **Backlog:** `Docs/backlog/backlog-index.md` or `<feature-slug>-backlog.md`
+- **Archive:** `Docs/archive-plans/name-plan.md`

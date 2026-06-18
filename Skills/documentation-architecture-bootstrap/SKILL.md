@@ -4,6 +4,7 @@ name: "Documentation Architecture Bootstrap"
 status: "stable"
 description: "defines the standard folder taxonomy, document anatomy, and bootstrapping checklist for spawning a clean, standardized /docs library across any application."
 allowed-tools: ["view_file", "write_to_file", "list_dir"]
+references: "references/ — Contains 19 pre-built agnostic Markdown templates (00–18) that mirror every canonical /docs/core slot. Use these as starting scaffolds when bootstrapping a new project."
 ---
 
 # 🗺️ Documentation Architecture Bootstrap
@@ -40,6 +41,7 @@ Every project's `/docs` directory is organized into specialized subdirectories b
 | `/docs/database` | **The Skeleton** | `database-index.md` | Schema breakdowns, table/collection relationships, and data-layer logic. |
 | `/docs/logic` | **The Internal Organs** | `logic-index.md` | Utility functions, custom hooks, services, parsers, and complex algorithmic explanations. |
 | `/docs/logs` | **The Memory** | `agent-changelog.md` | Chronological records of agent actions and audits. |
+| `/docs/backlog` | **The Queue** | `backlog-index.md` | Project backlog index and individual early-prepared backlog plans (`<feature-slug>-backlog.md`). |
 | `/docs/prompts` | **The Voice** | *(User Managed)* | Standardized LLM prompts and persona definitions. |
 | `/docs/plans` | **The Future** | *(User Managed)* | Historical and active implementation plans. |
 
@@ -57,6 +59,7 @@ To ensure high-speed lookup and clarity, files within subdirectories **must** fo
 | `database/` | `db-collection-name.md` | `db-users.md`, `db-projects.md` |
 | `logic/` | `util-name.md` or `hook-name.md` | `util-date-parser.md`, `hook-use-auth.md` |
 | `logs/` | `agent-changelog.md` | *(single file, append-only)* |
+| `backlog/` | `backlog-index.md` or `<feature-slug>-backlog.md` | `backlog-index.md`, `supabase-rls-backlog.md` |
 
 > [!TIP]
 > The numbered `0x-` prefix in `/core` creates a natural **onboarding flow**. New team members (or agents) read documents in sequence to build context progressively.
@@ -232,11 +235,11 @@ All 19 slots are defined below in their canonical numbered order.
 
 ---
 
-#### `13-theme-linguistics.md` — Theming & Content Localization
-- **Purpose:** Documents how the UI adapts its terminology, labels, and nomenclature across themes, locales, or white-label configurations.
-- **Contains:** Nomenclature mapping tables (functional area → display label per theme/locale), translation key registry, rules for avoiding hardcoded strings.
-- **✅ Must Do:** Provide a mapping table showing every functional area's label under each theme/variant.
-- **❌ Don't:** Hardcode UI text strings in code documentation; always reference translation keys.
+#### `13-security-standards.md` — Security Standards
+- **Purpose:** Establishes the project's Core Security Perimeter and Agentic Governance standard.
+- **Contains:** Strict security boundaries, zero-trust database principles, secret and environment variable management, RLS schemas, dependency pinning, and API abuse/rate limiting controls.
+- **✅ Must Do:** Document exact policies for RLS, environment variable configuration, and dependency audits.
+- **❌ Don't:** Expose raw credentials or secrets; keep instructions high-level and focused on security structure.
 
 ---
 
@@ -248,11 +251,11 @@ All 19 slots are defined below in their canonical numbered order.
 
 ---
 
-#### `15-security.md` — Core Security Principles
-- **Purpose:** Establishes the project's Core Security Perimeter and Agentic Governance standard.
-- **Contains:** Strict security boundaries, zero-trust database principles, secret and environment variable management, RLS schemas, dependency pinning, and API abuse/rate limiting controls.
-- **✅ Must Do:** Document exact policies for RLS, environment variable configuration, and dependency audits.
-- **❌ Don't:** Expose raw credentials or secrets; keep instructions high-level and focused on security structure.
+#### `15-theme-linguistics.md` — Theming & Content Localization
+- **Purpose:** Documents how the UI adapts its terminology, labels, and nomenclature across themes, locales, or white-label configurations.
+- **Contains:** Nomenclature mapping tables (functional area → display label per theme/locale), translation key registry, rules for avoiding hardcoded strings.
+- **✅ Must Do:** Provide a mapping table showing every functional area's label under each theme/variant.
+- **❌ Don't:** Hardcode UI text strings in code documentation; always reference translation keys.
 
 ---
 
@@ -304,6 +307,10 @@ Each subfolder index serves as a **table of contents** for its category. It grou
 - **✅ Must Do:** Follow the strict format defined in the project's agent entry point (`GEMINI.md` or equivalent).
 - **❌ Don't:** Write long paragraphs; use concise bullet points with timestamps.
 
+#### `backlog/backlog-index.md`
+- **✅ Must Do:** Keep a high-level list of all parked, deferred, and future roadmap items, with direct links to their detailed `<feature-slug>-backlog.md` plan files.
+- **❌ Don't:** Place detailed technical plans or specifications directly in the index; keep them isolated in separate backlog plan files.
+
 ---
 
 ### 🛠️ User-Managed Directories
@@ -319,14 +326,18 @@ The following directories are **User Managed**. Agents should **never** create o
 
 When applying this blueprint to a **new** project for the first time:
 
-1. **Create the folder structure** per Section 2.
-2. **Seed `00-system-index.md`** with the project name, a placeholder architecture diagram, links to empty category indices, and the **summary table listing all core docs (`01` to `17`)**.
-3. **Create empty category indices** (`features-index.md`, `components-index.md`, `database-index.md`, `logic-index.md`).
-4. **Run a Gap Analysis** against the Foundation Checklist (Section 6) and prioritize:
+> [!TIP]
+> **Don't start from scratch.** This skill includes a `references/` directory containing **19 pre-built, application-agnostic Markdown templates** — one for every canonical `/docs/core` slot (`00` through `18`). Always use these as your starting scaffold. They contain the correct frontmatter, section headings, structural patterns, and inline `[PLACEHOLDER]` prompts that guide you through filling in project-specific content.
+
+1. **Read the templates first:** Run `list_dir` on this skill's `references/` directory to see all available scaffolds. Copy the relevant template into the target project's `/docs/core/` directory before writing any content.
+2. **Create the folder structure** per Section 2.
+3. **Seed `00-system-index.md`** with the project name, a placeholder architecture diagram, links to empty category indices, and the **summary table listing all core docs (`01` to `18`)**.
+4. **Create empty category indices** (`features-index.md`, `components-index.md`, `database-index.md`, `logic-index.md`).
+5. **Run a Gap Analysis** against the Foundation Checklist (Section 6) and prioritize:
    - `01-vision-north-star.md` (establishes the product's goal and magic moment)
    - `04-directory-structure.md` (prevents file sprawl and maps code locations)
    - `06-design-system.md` (prevents UI inconsistency and sets visual standards)
-5. **Fill remaining docs** incrementally as features are built.
+6. **Fill remaining docs** incrementally as features are built.
 
 ---
 

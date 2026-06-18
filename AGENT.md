@@ -39,6 +39,8 @@ This is the master directory containing the Architecture Flow and system index. 
 | Editing overall layout or workspace shell | [App Shell Structure](Docs/core/05-app-structure.md) | Core layout component docs |
 | Understanding state shapes / context | [State & Context](Docs/core/07-state-context.md) | State management docs |
 | Extending a utility or custom helper | [Logic Index](Docs/logic/logic-index.md) | Specific utility / helper doc |
+| Checking backlog/roadmap or parked items | [Backlog Index](Docs/backlog/backlog-index.md) | Specific backlog plan doc |
+| Viewing archived implementation plans | [Plan Archive](Docs/archive-plans/README.md) | Specific archived plan |
 
 ---
 
@@ -63,3 +65,5 @@ This is the master directory containing the Architecture Flow and system index. 
    **Part 2 — Docs sync:** Update any `/Docs` file whose described behavior changed. These will have been mentioned in planning or used in execution.
 
    **Part 3 — Version History Logging:** If the task involves a deployment/push using the deployment pipeline, ensure that the newly incremented version (Major, Minor, or Patch) is logged under `Docs/logs/version-history.md` alongside the deployer and key highlights.
+
+   **Part 4 — Archiving Completed Plans:** Move the completed plan file from `Docs/plans/[plan-name].md` to `Docs/archive-plans/[plan-name].md` to keep the active plans directory clean.

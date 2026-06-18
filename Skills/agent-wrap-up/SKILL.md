@@ -59,11 +59,31 @@ Ensure the rest of the documentation doesn't become "stale" or misleading.
 3.  **Update**: Apply surgical edits to ensure every doc reflects the current reality.
 
 ### Phase 4: Plan Finalization
-1.  **Update Implementation Plans**: If you were following a plan in `docs/plans/`, update its status header:
-    - Change `Status: executed` or `Status: In Progress` to `Status: Completed`.
-    - Add a "Completion Note" at the bottom of the plan if any deviations from the original plan were necessary.
+1.  **Update Implementation Plans**: If you were following a plan in `docs/plans/`, finalize it in this strict order:
+    - **Step 1 — Mark Complete:** Open the plan file and update its **State Dashboard** to set `Status` to `COMPLETE` and `Last Updated` to the current timestamp. Do this **before** moving the file.
+    - **Step 2 — Add Completion Note:** At the bottom of the plan, add a `## ✅ Completion Note` section explaining the actual outcome and any deviations from the original plan.
+    - **Step 3 — Archive:** Move the completed plan file from `docs/plans/[plan-name].md` to `docs/archive-plans/[plan-name].md`. Use `write_to_file` to write the updated content to the archive path, then delete the original from `docs/plans/`.
 
-### Phase 5: Knowledge Capture
+> [!IMPORTANT]
+> **Archival is mandatory, not optional.** A plan that is done but still sitting in `docs/plans/` is a ghost — it pollutes future agents' context. Every completed plan **MUST** be archived before wrap-up is considered complete.
+
+### Phase 5: Backlog Triage (`docs/todo/backlog.md`)
+Completed work may resolve one or more open backlog items. Do not skip this phase.
+
+1. **Read the Backlog**: Use `view_file` on `docs/todo/backlog.md` to read all current entries.
+2. **Match Against Completed Work**: Compare each backlog item against what was implemented in this session. An item qualifies for removal if:
+   - The feature, fix, or improvement it describes was fully implemented, OR
+   - It was explicitly superseded or made irrelevant by the work done.
+3. **Take Action**:
+   - **Remove** any backlog item that is fully resolved. Delete the entry entirely — do not leave it as a comment or strike-through.
+   - **Partially completed** items should have a note appended (e.g., `> Partially addressed by [task name] — remaining: [what's left]`).
+   - **Unrelated** items are left untouched.
+4. **If no matches found**: State "No backlog items resolved by this session" and move on.
+
+> [!IMPORTANT]
+> Always read the full `backlog.md` before deciding nothing applies. Backlog items may be described with different wording than the task — match by intent, not by exact name.
+
+### Phase 6: Knowledge Capture
 1. **Log Tribal Knowledge**: Review the conversation for any specific user preferences, "gotchas", or architectural decisions that aren't captured in formal documentation but should be remembered.
 2. **Update Decision Log**: Use the `@knowledge capture` skill to add these entries to the project's `REF-Knowledge-Capture.md`, `17-knowledge-capture.md`, or `knowledge-capture.md`.
 

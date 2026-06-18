@@ -24,6 +24,8 @@ graph TD
 - [Database](../database/database-index.md)
 - [Logic](../logic/logic-index.md)
 - [Plans](../plans/template-plan.md)
+- [Backlog](../backlog/backlog-index.md)
+- [Archive](../archive-plans/README.md)
 
 ## 🧠 Core Brain Documents
 

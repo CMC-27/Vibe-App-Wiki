@@ -38,27 +38,15 @@
 
 ## 5️⃣ Phase 5: Product Owner Review
 * **Status:** `PENDING`
-* **Findings:**
-  - [✅/⚠️/🚫] **Vision & Scope** — [brief note]
-  - [✅/⚠️/🚫] **Business Logic & Edge Cases** — [brief note]
-  - [✅/⚠️/🚫] **Dependency & Functional Risk** — [brief note]
-  - [✅/⚠️/🚫] **Completeness & User Intent** — [brief note]
+* **Feedback:** [Alignment with app vision, docs]
 * **Required Fixes:**
-  - `[ ]` [Fix 1 — or mark "None"]
+  - `[ ]` [Fix 1]
 
 ## 6️⃣ Phase 6: Senior Dev Hygiene Review
 * **Status:** `PENDING`
-* **Findings:**
-  - [✅/⚠️/🚫] **DRY Scan** — [brief note on any duplicates found]
-  - [✅/⚠️/🚫] **Abstraction & Architecture** — [brief note]
-  - [✅/⚠️/🚫] **State Management & Data Flow** — [brief note]
-  - [✅/⚠️/🚫] **Technical Debt & Deletion** — [brief note]
-  - [✅/⚠️/🚫] **Secret Management** — [brief note]
-  - [✅/⚠️/🚫] **Data Security (RLS)** — [brief note]
-  - [✅/⚠️/🚫] **Rate Limiting** — [brief note]
-  - [✅/⚠️/🚫] **Error Handling** — [brief note]
+* **Feedback:** [Comments on DRY, SOLID, best practices]
 * **Required Fixes:**
-  - `[ ]` [Fix 1 — or mark "None"]
+  - `[ ]` [Fix 1]
 
 ## 7️⃣ Phase 7: Implementation Checklist (Execution)
 - `[ ]` [Execution Step 1 from Phase 4]

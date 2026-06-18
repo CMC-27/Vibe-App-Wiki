@@ -21,10 +21,11 @@ Before you write a single word of documentation or code:
 1. **Code Inventory:** Run `list_dir` and `grep_search` on the source folders (`src/`, `lib/`, etc.) to inventory active components, hooks, stores, and schemas.
 2. **Never Guess:** Never document a component or a workflow based on its name alone. Ground all descriptions in the actual import chains, state shapes, and API payloads present in the codebase.
 3. **Verify Context:** Check `docs/core/01-vision-north-star.md` and `docs/core/02-product-context.md` to ensure your technical understanding aligns with the user personas and strategic objectives.
+4. **Pre-Scan the Changelog *(early signal, not a substitute)*:** Read `docs/logs/agent-changelog.md` before diving deep. Recent entries can quickly surface which features or components were touched last, flagging areas likely to have stale or missing documentation. Treat this as a **triage hint** — use it to prioritize where to look, but do **not** treat it as a complete picture. The full 3-phase audit below is always required regardless of what the changelog reveals.
 
 ### Phase 2: Slot Gap Analysis
 Audit the existing `/docs` directory to evaluate the health of the knowledge infrastructure:
-1. **Check standard `/core` slots:** Match existing filenames in `/docs/core` against the **18 canonical slots** defined in the [Documentation Architecture Bootstrap](../documentation-architecture-bootstrap/SKILL.md) standard.
+1. **Check standard `/core` slots:** Match existing filenames in `/docs/core` against the **18 canonical slots** defined in the [Documentation Architecture Bootstrap](file:///C:/Users/carso/.gemini/config/skills/documentation-architecture-bootstrap/SKILL.md) standard.
 2. **Identify mismatches & gaps:** Highlight missing core files, obsolete naming conventions (e.g., using old index numbering), or orphaned files.
 3. **Evaluate detail quality:** Identify files that are hollow placeholders or lack critical requirements (such as missing field-mapping tables in external integrations or missing data shapes in state context).
 
@@ -54,11 +55,12 @@ description: "Brief summary of the document's purpose."
 Mark superseded documents with `status: "deprecated"` or move them to a `deprecated/` subfolder.
 
 ### B. Table of Contents Syncing
-When adding or deleting files in `/docs/features`, `/docs/components`, `/docs/database`, or `/docs/logic`, you **must** update the corresponding category index:
+When adding or deleting files in `/docs/features`, `/docs/components`, `/docs/database`, `/docs/logic`, or `/docs/backlog`, you **must** update the corresponding category index:
 - `features-index.md`
 - `components-index.md`
 - `database-index.md`
 - `logic-index.md`
+- `backlog-index.md`
 
 ### C. Project Audit Logging (The Wrap-Up Protocol)
 Whenever you finalize a task or complete a feature, you **MUST** record your actions in the project's chronological change record at `docs/logs/agent-changelog.md`.
@@ -82,12 +84,14 @@ When asked to "audit", "assess", "check", or "review" a project's documentation,
 
 ```mermaid
 flowchart TD
+    Changelog["0. Pre-scan agent-changelog.md\n(triage hint only)"] --> Start
     Start["1. Run list_dir on /docs/core"] --> Gap["2. Compare against 18 standard slots"]
     Gap --> Match["3. Check code mapping for each active file"]
-    Match --> AuditLog["4. Check docs/logs/agent-changelog.md structure"]
+    Match --> AuditLog["4. Verify agent-changelog.md structure & recent entries"]
     AuditLog --> Report["5. Generate Gap Analysis Report"]
 ```
 
+0. **Pre-scan `docs/logs/agent-changelog.md` *(early triage only)*:** Skim the most recent entries to identify recently modified features or components. Use this to **prioritize** which areas to scrutinize first — it is **not** a replacement for the full audit. If no changelog exists, treat that absence itself as a gap finding.
 1. **Perform `/core` Slot Census:** Count active slots, verify filenames follow the correct `0x-name.md` prefix.
 2. **Execute Source Verification:** Audit if `04-directory-structure.md` perfectly matches the actual file tree, and if `07-state-context.md` matches the types/interfaces in store files.
 3. **Trace Integration Payloads:** Audit if `10-external-integrations.md` has valid field mapping tables connecting internal keys to third-party parameters.

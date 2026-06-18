@@ -2,6 +2,35 @@
 
 All changes made by AI agents are tracked chronologically below.
 
+## [2026-06-18 21:10] - Updated Workspace Architecture to Include Backlog and Archive
+**Agent:** Antigravity (Gemini 3.5 Flash (High))
+**Files Modified:**
+- `AGENT.md`
+- `docs/core/00-system-index.md`
+- `docs/core/04-directory-structure.md`
+- `docs/core/17-docs-blueprint.md`
+- `docs/backlog/backlog-index.md`
+- `docs/archive-plans/README.md`
+- `skills/backlog/SKILL.md`
+**Database/API Changes:** None
+**Summary:** Updated the workspace architecture mapping files to integrate the Backlog (docs/backlog/) and Archive (docs/archive-plans/) folders, created index/readme templates for them, and copied the global backlog skill to the workspace skills folder.
+
+## [2026-06-18 21:08] - Updated Workspace Skills & Created Sync Skills
+**Agent:** Antigravity (Gemini 3.5 Flash (Medium))
+**Files Modified:**
+- `Skills/Test-and-Deploy/SKILL.md`
+- `Skills/agent-wrap-up/SKILL.md`
+- `Skills/code-hygiene-architecture-review/SKILL.md`
+- `Skills/code-planning/SKILL.md`
+- `Skills/code-product-owner-assessment/SKILL.md`
+- `Skills/documentation-architecture-assessment/SKILL.md`
+- `Skills/documentation-architecture-bootstrap/SKILL.md`
+- `Skills/pass-the-parcel/SKILL.md`
+- `Skills/update-global-skills/SKILL.md`
+- `Skills/update-workspace-skills/SKILL.md`
+**Database/API Changes:** None
+**Summary:** Updated 8 existing workspace skills to their latest versions from .gemini config (including references folders), and created two new skills (update-workspace-skills and update-global-skills) in both global and workspace directories.
+
 ## [2026-06-07 13:06] - Initialized Documentation Library
 **Agent:** Antigravity (Gemini 3.5 Flash (Low))
 **Files Modified:**

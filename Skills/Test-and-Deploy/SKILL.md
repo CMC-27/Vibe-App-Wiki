@@ -25,9 +25,9 @@ Run tests and linting to ensure zero regressions or formatting errors exist befo
 Before staging and committing, you MUST check and bump the version in `package.json` following the project's **3-Level Versioning Strategy**:
 1. **Read Current Version**: Retrieve the current `"version"` value from `package.json`.
 2. **Determine/Select Increment Level**: Clarify with the user which level should be bumped:
-   * **Level 1 (Major)**: User-directed primary versions (e.g., `1.0.0` -> `2.0.0`).
-   * **Level 2 (Minor)**: New feature versions (e.g., `1.0.0` -> `1.1.0`). Clarify with the user if this release introduces new features.
-   * **Level 3 (Patch)**: Every new deployment (e.g., `1.0.0` -> `1.0.1`). If the user does not request a Major or Minor bump, increment this automatically.
+   * **Level 1 (Major)**: User-directed primary versions (e.g., `1.02.003` -> `2.00.000`). Resets minor and patch levels to double/triple zero padding.
+   * **Level 2 (Minor)**: New feature versions (e.g., `1.02.003` -> `1.03.003`). Increments the minor level by 1, while preserving the patch level as-is.
+   * **Level 3 (Patch)**: Routine deployment versions (e.g., `1.02.003` -> `1.02.004`). Increments the patch level by 1, while preserving the minor level as-is. If the user does not request a Major or Minor bump, increment this automatically.
 3. **Update Files**: 
    * Write the updated version string back to the `"version"` field in `package.json`.
    * Append a new row to the **Release Log** table in `docs/logs/version-history.md` detailing the new version, current date, increment level, deployer name/model, and primary release highlights.
