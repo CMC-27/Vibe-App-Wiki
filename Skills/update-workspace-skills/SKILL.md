@@ -9,7 +9,7 @@ This skill automates pulling the latest versions of documented skills from the u
 
 ## 1. Directory Structure
 *   **Global Skills Source:** `C:\Users\carso\.gemini\config\skills`
-*   **Workspace Skills Destination:** `c:\Users\carso\OneDrive\Coding\Vibe-App-Wiki\Skills`
+*   **Workspace Skills Destination:** The `Skills` directory in the current active workspace (e.g., `.\Skills` relative to the workspace root).
 
 ## 2. Synchronization Protocol
 
@@ -20,7 +20,7 @@ This skill automates pulling the latest versions of documented skills from the u
     *   Confirm it exists in `C:\Users\carso\.gemini\config\skills\`.
     *   If it does not exist globally, log a warning (do not attempt to copy).
 3.  **Perform Synchronization:**
-    For each validated skill, copy all files and folders recursively from `C:\Users\carso\.gemini\config\skills\<skill-name>\*` to `c:\Users\carso\OneDrive\Coding\Vibe-App-Wiki\Skills\<skill-name>\`.
+    For each validated skill, copy all files and folders recursively from `C:\Users\carso\.gemini\config\skills\<skill-name>\*` to the active workspace `Skills\<skill-name>\` (e.g., `.\Skills\<skill-name>\`).
     *   Ensure target files are overwritten to match the global version exactly.
     *   Ensure any subfolders (e.g., `references/`, `evals/`) are fully copied.
 4.  **Verification:**

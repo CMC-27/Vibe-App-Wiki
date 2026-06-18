@@ -2,6 +2,18 @@
 
 All changes made by AI agents are tracked chronologically below.
 
+## [2026-06-19 00:49] - Added Version History Template and Fixed Hardcoded Skill Paths
+**Agent:** Antigravity (Gemini 3.5 Flash (Medium))
+**Files Modified:**
+- `Docs/logs/version-history.md`
+- `Docs/core/00-system-index.md`
+- `Docs/core/17-docs-blueprint.md`
+- `Skills/documentation-architecture-bootstrap/SKILL.md`
+- `Skills/update-workspace-skills/SKILL.md`
+- `Skills/update-global-skills/SKILL.md`
+**Database/API Changes:** None
+**Summary:** Added the missing `version-history.md` template file to the logs folder, updated the master index and documentation blueprint to reference it, updated bootstrap guidelines to include it, and refactored workspace/global skills to use relative paths rather than hardcoded OneDrive paths.
+
 ## [2026-06-18 21:10] - Updated Workspace Architecture to Include Backlog and Archive
 **Agent:** Antigravity (Gemini 3.5 Flash (High))
 **Files Modified:**

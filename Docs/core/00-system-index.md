@@ -26,6 +26,8 @@ graph TD
 - [Plans](../plans/template-plan.md)
 - [Backlog](../backlog/backlog-index.md)
 - [Archive](../archive-plans/README.md)
+- [Version History](../logs/version-history.md)
+- [Agent Changelog](../logs/agent-changelog.md)
 
 ## 🧠 Core Brain Documents
 

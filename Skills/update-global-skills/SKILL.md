@@ -8,7 +8,7 @@ description: Make sure to use this skill whenever the user mentions updating glo
 This skill automates pushing the skills from the active workspace's `Skills` directory into the user's global `.gemini` config directory. Run this at the start of a session to ensure the runtime environment has the latest workspace versions.
 
 ## 1. Directory Structure
-*   **Workspace Skills Source:** `c:\Users\carso\OneDrive\Coding\Vibe-App-Wiki\Skills`
+*   **Workspace Skills Source:** The `Skills` directory in the current active workspace (e.g., `.\Skills` relative to the workspace root).
 *   **Global Skills Destination:** `C:\Users\carso\.gemini\config\skills`
 
 ## 2. Synchronization Protocol
@@ -16,7 +16,7 @@ This skill automates pushing the skills from the active workspace's `Skills` dir
 1.  **Identify Workspace Skills:**
     Scan the workspace `Skills` directory to list all subdirectories currently present (e.g., `agent-wrap-up`, `Test-and-Deploy`, etc.).
 2.  **Perform Synchronization:**
-    For each skill subdirectory found in the workspace, copy all files and folders recursively from the workspace `c:\Users\carso\OneDrive\Coding\Vibe-App-Wiki\Skills\<skill-name>\*` to the global directory `C:\Users\carso\.gemini\config\skills\<skill-name>\`.
+    For each skill subdirectory found in the workspace, copy all files and folders recursively from the active workspace `Skills\<skill-name>\*` (e.g., `.\Skills\<skill-name>\*`) to the global directory `C:\Users\carso\.gemini\config\skills\<skill-name>\`.
     *   Ensure target files in the `.gemini` config directory are overwritten.
     *   Ensure subfolders (e.g., `references/`, `evals/`) are fully copied.
 3.  **Verification:**

@@ -30,6 +30,6 @@ This project implements the **Documentation Library Standard**.
 - **Database:** `Docs/database/db-name.md`
 - **Logic:** `Docs/logic/util-name.md` or `hook-name.md`
 - **Plans:** `Docs/plans/name-plan.md`
-- **Logs:** `Docs/logs/agent-changelog.md`
+- **Logs:** `Docs/logs/agent-changelog.md` or `version-history.md`
 - **Backlog:** `Docs/backlog/backlog-index.md` or `<feature-slug>-backlog.md`
 - **Archive:** `Docs/archive-plans/name-plan.md`

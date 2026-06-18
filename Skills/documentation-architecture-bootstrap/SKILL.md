@@ -307,6 +307,10 @@ Each subfolder index serves as a **table of contents** for its category. It grou
 - **✅ Must Do:** Follow the strict format defined in the project's agent entry point (`GEMINI.md` or equivalent).
 - **❌ Don't:** Write long paragraphs; use concise bullet points with timestamps.
 
+#### `logs/version-history.md`
+- **✅ Must Do:** Document all major, minor, and patch version increments with dates, deployer names, and core highlights following the 3-Level Versioning Strategy.
+- **❌ Don't:** Include minor developer detail in release highlights; keep them high-level and readable for stakeholders.
+
 #### `backlog/backlog-index.md`
 - **✅ Must Do:** Keep a high-level list of all parked, deferred, and future roadmap items, with direct links to their detailed `<feature-slug>-backlog.md` plan files.
 - **❌ Don't:** Place detailed technical plans or specifications directly in the index; keep them isolated in separate backlog plan files.
