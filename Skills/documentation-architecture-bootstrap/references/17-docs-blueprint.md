@@ -1,4 +1,4 @@
----
+﻿---
 type: "core"
 name: "Documentation Architecture Blueprint"
 status: "stable"
@@ -23,25 +23,25 @@ The documentation is not just for humans; it is the **source of truth** for AI A
 
 The library is organized into **two top-level libraries** based on functional purpose:
 
-### 📖 Wiki/ — Architecture Knowledge Base
+### 📖 wiki/ — Architecture Knowledge Base
 
 | Directory | Role | Parent/Index File | Description |
 | :--- | :--- | :--- | :--- |
-| `Wiki/core` | **The Brain** | `00-system-index.md` | Master index, design systems, state context, and global architecture. |
-| `Wiki/features` | **The Nervous System** | `features-index.md` | Screen-specific documentation, feature workflows, and view-logic. |
-| `Wiki/components` | **The Muscle** | `components-index.md` | Documentation for reusable UI atoms, molecules, and organisms. |
-| `Wiki/database` | **The Skeleton** | `database-index.md` | Schema breakdowns, table relationships, and data-layer logic. |
-| `Wiki/logic` | **The Internal Organs**| `logic-index.md` | Utility functions, custom hooks, and complex algorithmic explanations. |
+| `wiki/core` | **The Brain** | `00-system-index.md` | Master index, design systems, state context, and global architecture. |
+| `wiki/features` | **The Nervous System** | `features-index.md` | Screen-specific documentation, feature workflows, and view-logic. |
+| `wiki/components` | **The Muscle** | `components-index.md` | Documentation for reusable UI atoms, molecules, and organisms. |
+| `wiki/database` | **The Skeleton** | `database-index.md` | Schema breakdowns, table relationships, and data-layer logic. |
+| `wiki/logic` | **The Internal Organs**| `logic-index.md` | Utility functions, custom hooks, and complex algorithmic explanations. |
 
-### ⚙️ DevOps/ — Operational Process Tooling
+### ⚙️ dev/ — Operational Process Tooling
 
 | Directory | Role | Parent/Index File | Description |
 | :--- | :--- | :--- | :--- |
-| `DevOps/logs` | **The Memory** | `agent-changelog.md` | Chronological records of agent actions, audits, and hygiene checks. |
-| `DevOps/backlog` | **The Queue** | `backlog-index.md` | Project backlog index and individual backlog plan files. |
-| `DevOps/plans` | **The Vision** | *(User Managed)* | Implementation plans, architectural RFCs, and feature roadmaps. |
-| `DevOps/archive-plans` | **The Archive** | `README.md` | Completed and closed implementation plans. |
-| `DevOps/prompts` | **The Voice** | *(User Managed)* | Standardized LLM prompts and persona definitions for consistency. |
+| `dev/logs` | **The Memory** | `agent-changelog.md` | Chronological records of agent actions, audits, and hygiene checks. |
+| `dev/backlog` | **The Queue** | `backlog-index.md` | Project backlog index and individual backlog plan files. |
+| `dev/plans` | **The Vision** | *(User Managed)* | Implementation plans, architectural RFCs, and feature roadmaps. |
+| `dev/archive-plans` | **The Archive** | `README.md` | Completed and closed implementation plans. |
+| `dev/prompts` | **The Voice** | *(User Managed)* | Standardized LLM prompts and persona definitions for consistency. |
 
 ---
 
@@ -54,8 +54,8 @@ To ensure high-speed lookup and clarity, files within subdirectories must follow
 - **Components:** `ui-component-name.md` (e.g., `ui-modal.md`).
 - **Database:** `db-table-name.md` (e.g., `db-projects.md`).
 - **Logic:** `util-logic-name.md` or `hook-name.md`.
-- **Plans:** `DevOps/plans/name-plan.md`.
-- **Backlog:** `DevOps/backlog/<feature-slug>-backlog.md`.
+- **Plans:** `dev/plans/name-plan.md`.
+- **Backlog:** `dev/backlog/<feature-slug>-backlog.md`.
 
 ---
 
@@ -90,19 +90,19 @@ Links to related database tables, parent indices, or sibling features.
 
 ## 5. The "Hub & Spoke" Linking Strategy
 
-- **The Hub:** `Wiki/core/00-system-index.md` acts as the master router. It links to all **Category Indices** in the Wiki, and also cross-links to DevOps operational directories.
-- **The Spokes:** Each Wiki category (`Wiki/features/`, `Wiki/database/`, `Wiki/logic/`, `Wiki/components/`) has its own `*-index.md` that lists its children.
-- **DevOps Cross-Links:** The hub also links out to `DevOps/backlog/`, `DevOps/plans/`, `DevOps/logs/`, and `DevOps/archive-plans/`.
+- **The Hub:** `wiki/core/00-system-index.md` acts as the master router. It links to all **Category Indices** in the Wiki, and also cross-links to DevOps operational directories.
+- **The Spokes:** Each Wiki category (`wiki/features/`, `wiki/database/`, `wiki/logic/`, `wiki/components/`) has its own `*-index.md` that lists its children.
+- **DevOps Cross-Links:** The hub also links out to `dev/backlog/`, `dev/plans/`, `dev/logs/`, and `dev/archive-plans/`.
 - **Cross-Links:** Individual docs link directly to their database schemas or utility dependencies.
 
 ---
 
 ## 6. The Lifecycle of Documentation
 
-1. **Planning:** A plan file is created in `DevOps/plans/`.
-2. **Execution:** The agent performs the work and logs it in `DevOps/logs/agent-changelog.md`.
-3. **Sync:** As code is committed, the corresponding `feat-*`, `ui-*`, or `db-*` docs in `Wiki/` are updated to reflect the new truth.
-4. **Archiving:** Deprecated features move to a `deprecated/` subfolder or are marked in frontmatter. Completed plans move from `DevOps/plans/` to `DevOps/archive-plans/`.
+1. **Planning:** A plan file is created in `dev/plans/`.
+2. **Execution:** The agent performs the work and logs it in `dev/logs/agent-changelog.md`.
+3. **Sync:** As code is committed, the corresponding `feat-*`, `ui-*`, or `db-*` docs in `wiki/` are updated to reflect the new truth.
+4. **Archiving:** Deprecated features move to a `deprecated/` subfolder or are marked in frontmatter. Completed plans move from `dev/plans/` to `dev/archive-plans/`.
 
 ---
 
@@ -110,7 +110,7 @@ Links to related database tables, parent indices, or sibling features.
 
 Use this checklist to establish the core knowledge infrastructure. All 19 slots are defined below in their canonical numbered order.
 
-### 🧠 Wiki Core Brain Documents (`Wiki/core/`)
+### 🧠 Wiki Core Brain Documents (`wiki/core/`)
 
 | Slot | Filename | Name | Status |
 |:---|:---|:---|:---|

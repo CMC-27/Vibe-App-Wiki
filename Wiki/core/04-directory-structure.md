@@ -1,4 +1,4 @@
----
+﻿---
 type: "core"
 name: "Directory Structure"
 status: "stable"
@@ -11,13 +11,13 @@ description: "Prevents file sprawl by defining where every type of file belongs.
 
 ```
 /
-├── Wiki/               # Application architecture knowledge base
+├── wiki/               # Application architecture knowledge base
 │   ├── core/           # System core brain documents (00–18 series)
 │   ├── features/       # Feature/screen documentation
 │   ├── components/     # Reusable component documentation
 │   ├── database/       # Schema/data models documentation
 │   └── logic/          # Custom hooks, utilities, services
-├── DevOps/             # Operational process & workflow tooling
+├── dev/             # Operational process & workflow tooling
 │   ├── backlog/        # Pending/roadmap backlog index and plan files
 │   ├── plans/          # Active implementation plans
 │   ├── archive-plans/  # Archive of completed implementation plans
@@ -35,5 +35,5 @@ description: "Prevents file sprawl by defining where every type of file belongs.
 - **`src/components/`**: Only pure reusable UI elements without business domain logic.
 - **`src/features/`**: Feature-specific view directories containing page shells, subcomponents, and local hooks.
 - **`src/utils/`**: Pure functional code (input-to-output), free of UI dependencies.
-- **`DevOps/backlog/`**: Master project backlog index and individual feature backlog plans.
-- **`DevOps/archive-plans/`**: Completed and closed implementation plans.
+- **`dev/backlog/`**: Master project backlog index and individual feature backlog plans.
+- **`dev/archive-plans/`**: Completed and closed implementation plans.

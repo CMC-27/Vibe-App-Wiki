@@ -1,4 +1,4 @@
----
+﻿---
 type: "core"
 name: "Docs Blueprint"
 status: "stable"
@@ -12,27 +12,27 @@ This project implements the **Documentation Library Standard** using a two-libra
 
 ## 🗺️ Library Folder Taxonomy
 
-### 📖 Wiki — Architecture Knowledge Base
-- `Wiki/core/` (Brain: core indexes, architecture, design system)
-- `Wiki/features/` (Nervous System: view logic & feature modules)
-- `Wiki/components/` (Muscle: reusable UI components)
-- `Wiki/database/` (Skeleton: database schemas, relations)
-- `Wiki/logic/` (Internal Organs: utilities, helpers, custom hooks)
+### 📖 wiki — Architecture Knowledge Base
+- `wiki/core/` (Brain: core indexes, architecture, design system)
+- `wiki/features/` (Nervous System: view logic & feature modules)
+- `wiki/components/` (Muscle: reusable UI components)
+- `wiki/database/` (Skeleton: database schemas, relations)
+- `wiki/logic/` (Internal Organs: utilities, helpers, custom hooks)
 
 ### ⚙️ DevOps — Operational Process Tooling
-- `DevOps/plans/` (Strategy: multi-agent execution plans, templates)
-- `DevOps/logs/` (Memory: agent log records & version history)
-- `DevOps/backlog/` (Queue: project backlog index and individual backlog plans)
-- `DevOps/archive-plans/` (Archive: completed implementation plans)
+- `dev/plans/` (Strategy: multi-agent execution plans, templates)
+- `dev/logs/` (Memory: agent log records & version history)
+- `dev/backlog/` (Queue: project backlog index and individual backlog plans)
+- `dev/archive-plans/` (Archive: completed implementation plans)
 
 ## 📌 Standard File Naming
 
-- **Core:** `Wiki/core/0x-name.md` (Numbered onboarding flow)
-- **Features:** `Wiki/features/feat-name.md`
-- **Components:** `Wiki/components/ui-name.md`
-- **Database:** `Wiki/database/db-name.md`
-- **Logic:** `Wiki/logic/util-name.md` or `hook-name.md`
-- **Plans:** `DevOps/plans/name-plan.md`
-- **Logs:** `DevOps/logs/agent-changelog.md` or `version-history.md`
-- **Backlog:** `DevOps/backlog/backlog-index.md` or `<feature-slug>-backlog.md`
-- **Archive:** `DevOps/archive-plans/name-plan.md`
+- **Core:** `wiki/core/0x-name.md` (Numbered onboarding flow)
+- **Features:** `wiki/features/feat-name.md`
+- **Components:** `wiki/components/ui-name.md`
+- **Database:** `wiki/database/db-name.md`
+- **Logic:** `wiki/logic/util-name.md` or `hook-name.md`
+- **Plans:** `dev/plans/name-plan.md`
+- **Logs:** `dev/logs/agent-changelog.md` or `version-history.md`
+- **Backlog:** `dev/backlog/backlog-index.md` or `<feature-slug>-backlog.md`
+- **Archive:** `dev/archive-plans/name-plan.md`

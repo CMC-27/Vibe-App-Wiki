@@ -26,11 +26,11 @@ graph TD
 - [Logic](../logic/logic-index.md)
 
 ### ⚙️ DevOps (Operational)
-- [Plans](../../DevOps/plans/template-plan.md)
-- [Backlog](../../DevOps/backlog/backlog-index.md)
-- [Archive](../../DevOps/archive-plans/README.md)
-- [Version History](../../DevOps/logs/version-history.md)
-- [Agent Changelog](../../DevOps/logs/agent-changelog.md)
+- [Plans](../../dev/plans/template-plan.md)
+- [Backlog](../../dev/backlog/backlog-index.md)
+- [Archive](../../dev/archive-plans/README.md)
+- [Version History](../../dev/logs/version-history.md)
+- [Agent Changelog](../../dev/logs/agent-changelog.md)
 
 ## 🧠 Core Brain Documents
 
