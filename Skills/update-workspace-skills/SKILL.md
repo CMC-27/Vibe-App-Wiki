@@ -8,7 +8,7 @@ description: Make sure to use this skill whenever the user mentions updating wor
 This skill automates pulling the latest versions of documented skills from the user's global `.gemini` configuration into the active workspace's `Skills` directory. Run this at the end of a session to save any architectural blueprint changes.
 
 ## 1. Directory Structure
-*   **Global Skills Source:** `C:\Users\carso\.gemini\config\skills`
+*   **Global Skills Source:** `~\.gemini\config\skills` (i.e., `$env:USERPROFILE\.gemini\config\skills` on Windows)
 *   **Workspace Skills Destination:** The `Skills` directory in the current active workspace (e.g., `.\Skills` relative to the workspace root).
 
 ## 2. Synchronization Protocol
@@ -17,10 +17,10 @@ This skill automates pulling the latest versions of documented skills from the u
     Scan the workspace `Skills` directory to list all subdirectories currently present (e.g., `agent-wrap-up`, `Test-and-Deploy`, etc.).
 2.  **Verify Global Equivalents:**
     For each skill subdirectory found in the workspace:
-    *   Confirm it exists in `C:\Users\carso\.gemini\config\skills\`.
+    *   Confirm it exists in `~\.gemini\config\skills\` (i.e., `$env:USERPROFILE\.gemini\config\skills\`).
     *   If it does not exist globally, log a warning (do not attempt to copy).
 3.  **Perform Synchronization:**
-    For each validated skill, copy all files and folders recursively from `C:\Users\carso\.gemini\config\skills\<skill-name>\*` to the active workspace `Skills\<skill-name>\` (e.g., `.\Skills\<skill-name>\`).
+    For each validated skill, copy all files and folders recursively from `~\.gemini\config\skills\<skill-name>\*` (i.e., `$env:USERPROFILE\.gemini\config\skills\<skill-name>\*`) to the active workspace `Skills\<skill-name>\` (e.g., `.\Skills\<skill-name>\`).
     *   Ensure target files are overwritten to match the global version exactly.
     *   Ensure any subfolders (e.g., `references/`, `evals/`) are fully copied.
 4.  **Verification:**

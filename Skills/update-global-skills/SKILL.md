@@ -9,14 +9,14 @@ This skill automates pushing the skills from the active workspace's `Skills` dir
 
 ## 1. Directory Structure
 *   **Workspace Skills Source:** The `Skills` directory in the current active workspace (e.g., `.\Skills` relative to the workspace root).
-*   **Global Skills Destination:** `C:\Users\carso\.gemini\config\skills`
+*   **Global Skills Destination:** `~\.gemini\config\skills` (i.e., `$env:USERPROFILE\.gemini\config\skills` on Windows)
 
 ## 2. Synchronization Protocol
 
 1.  **Identify Workspace Skills:**
     Scan the workspace `Skills` directory to list all subdirectories currently present (e.g., `agent-wrap-up`, `Test-and-Deploy`, etc.).
 2.  **Perform Synchronization:**
-    For each skill subdirectory found in the workspace, copy all files and folders recursively from the active workspace `Skills\<skill-name>\*` (e.g., `.\Skills\<skill-name>\*`) to the global directory `C:\Users\carso\.gemini\config\skills\<skill-name>\`.
+    For each skill subdirectory found in the workspace, copy all files and folders recursively from the active workspace `Skills\<skill-name>\*` (e.g., `.\Skills\<skill-name>\*`) to the global directory `~\.gemini\config\skills\<skill-name>\` (i.e., `$env:USERPROFILE\.gemini\config\skills\<skill-name>\` on Windows).
     *   Ensure target files in the `.gemini` config directory are overwritten.
     *   Ensure subfolders (e.g., `references/`, `evals/`) are fully copied.
 3.  **Verification:**
