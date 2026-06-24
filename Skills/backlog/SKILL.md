@@ -13,7 +13,7 @@ When the user requests to add an item to the backlog:
 
 ## 2. Format the Backlog Entry
 For each backlog item, create:
-1. A brief entry line for the index file containing a clickable link to the backlog plan.
+1. A brief entry line for the `docs/dev/backlog/backlog-index.md` index file containing a clickable link to the backlog plan.
 2. A full, early-prepared plan file named `<feature-slug>-backlog.md` structured with the standard Pass-the-Parcel Markdown Template, setting the State Dashboard status to `BACKLOG` and active persona to `Planner`. Populate the following sections with the gathered context:
    * **Title:** A clear, concise name for the feature or upgrade.
    * **Phase 1 (Expansion & Scoping):** Frame the intent, in-scope, and out-of-scope tasks.
@@ -22,6 +22,6 @@ For each backlog item, create:
    * **Phase 4 (Detailed Execution Plan):** Any tentative steps, commands, or placeholder logic.
 
 ## 3. Update the Backlog
-* Locate the `backlog-index.md` file within the project's `docs/backlog/` folder (create if missing).
+* Locate the `backlog-index.md` file within the project's `docs/dev/backlog/` folder (create if missing).
 * Add the new backlog item to the appropriate section as a bullet point linking directly to its `<feature-slug>-backlog.md` plan file.
-* Create the `<feature-slug>-backlog.md` plan file inside the `docs/backlog/` directory.
+* Create the `<feature-slug>-backlog.md` plan file inside the `docs/dev/backlog/` directory.

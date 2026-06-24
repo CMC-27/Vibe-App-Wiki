@@ -1,24 +1,24 @@
 # Vibe App Wiki: Agent Entry Point 🚀
 
 **Welcome to the Application Workspace.** 
-This repository is configured with a structured documentation library split into **`/wiki`** (architecture knowledge) and **`/dev`** (operational process tooling), designed to serve as the single source of truth for the codebase, architecture, state management, and user interfaces.
+This repository is configured with a structured documentation library split into **`docs/wiki`** (architecture knowledge) and **`docs/dev`** (operational process tooling), designed to serve as the single source of truth for the codebase, architecture, state management, and user interfaces.
 
 Instead of searching the entire codebase to understand context, **STOP** and read the localized intelligence hub first.
 
 ## 📌 MANDATORY READING (The Docs Hub)
 
-Everything you need to execute bug fixes or feature requests flawlessly is mapped out in the `/wiki` directory.
+Everything you need to execute bug fixes or feature requests flawlessly is mapped out in the `docs/wiki` directory.
 
 ### 1. 🗺️ Start Here: `wiki/core/00-system-index.md`
 This is the master directory containing the Architecture Flow and system index. It maps out how the codebase, modules, and data stores interact.
 
 ### 2. 🎨 Need to build or edit a UI element?
-**Read `wiki/core/06-design-system.md` FIRST.**
+**Read `docs/wiki/core/06-design-system.md` FIRST.**
 - Do not guess CSS classes or component styles. The project uses a strict, predefined theme and design tokens.
 - Review global layouts and layout wrappers defined here before implementing screens.
 
 ### 3. 💾 Need to interact with Application State?
-**Read `wiki/core/07-state-context.md` FIRST.**
+**Read `docs/wiki/core/07-state-context.md` FIRST.**
 - Provides the exact shapes of active contexts, store structures, or data models.
 
 ### 4. 🗄️ Database Schemas & API Integration
